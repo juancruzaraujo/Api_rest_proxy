@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "Api_rest_get_greeting": {
+      "commandName": "Project",
+      "commandLineArgs": "1492 1493"
+    }
+  }
+}
