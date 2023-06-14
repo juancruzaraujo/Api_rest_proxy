@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -11,7 +12,8 @@ namespace ProxyRest
         //la respuesta del host
         string _responseBody;
         string _excecutionError;
-        
+        HttpStatusCode _statusCode;
+
         internal HostResponse()
         {
             _responseBody = "";
@@ -39,6 +41,22 @@ namespace ProxyRest
             set
             {
                 _excecutionError = value;
+            }
+        }
+
+        internal HttpStatusCode SetStatusCode
+        {
+            set
+            {
+                _statusCode = value;
+            }
+        }
+
+        internal HttpStatusCode GetSatatusCode
+        {
+            get
+            {
+                return _statusCode;
             }
         }
 

@@ -96,7 +96,7 @@ namespace ProxyRest
                                 response = await client.SendAsync(request);
                                 break;
                         }
-
+                        hostResponse.SetStatusCode = response.StatusCode;
                         response.EnsureSuccessStatusCode();
                         hostResponse.ResponseBody = await response.Content.ReadAsStringAsync();
 

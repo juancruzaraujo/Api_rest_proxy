@@ -45,8 +45,11 @@ namespace ProxyRest
                             response = hostResponse.ResponseBody;
                         }
 
+                        context.Response.StatusCode = ((int)hostResponse.GetSatatusCode);
+                        context.Response.ContentType = "application/json";
                         await context.Response.WriteAsync(response, Encoding.UTF8);
                         
+
                     });
                 })
                 .Build();

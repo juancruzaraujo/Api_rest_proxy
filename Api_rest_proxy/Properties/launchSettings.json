@@ -5,7 +5,8 @@
       "distributionName": ""
     },
     "Perfil 1": {
-      "commandName": "Project"
+      "commandName": "Project",
+      "commandLineArgs": "https://127.0.0.1:1790 2019 2020"
     }
   }
 }
