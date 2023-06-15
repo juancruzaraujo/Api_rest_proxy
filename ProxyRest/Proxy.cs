@@ -46,7 +46,7 @@ namespace ProxyRest
                         }
 
                         context.Response.StatusCode = ((int)hostResponse.GetSatatusCode);
-                        context.Response.ContentType = "application/json";
+                        context.Response.ContentType = hostResponse.GetContentType;
                         await context.Response.WriteAsync(response, Encoding.UTF8);
                         
 

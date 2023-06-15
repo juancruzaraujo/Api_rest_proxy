@@ -54,16 +54,17 @@ namespace ProxyRest
                                     haveAuth = false;
                                 }
 
-                                /*
-                                bool haveContent = key.IndexOf("Content", StringComparison.OrdinalIgnoreCase) >= 0;
-                                if (!haveContent && !haveAuth)
+                                
+                                //bool haveContent = key.IndexOf("Content", StringComparison.OrdinalIgnoreCase) >= 0;
+
+                                /*if (!haveContent && !haveAuth)
                                 {
                                     foreach (string value in values)
                                     {
                                         //request.Headers.Add(key, value);
                                     }
-                                }
-                                */
+                                }*/
+                                
                             }
                         }
                         catch(Exception ex)
@@ -97,6 +98,7 @@ namespace ProxyRest
                                 break;
                         }
                         hostResponse.SetStatusCode = response.StatusCode;
+                        hostResponse.SetContentType = response.Content.Headers.ContentType.ToString() + "";
                         response.EnsureSuccessStatusCode();
                         hostResponse.ResponseBody = await response.Content.ReadAsStringAsync();
 
